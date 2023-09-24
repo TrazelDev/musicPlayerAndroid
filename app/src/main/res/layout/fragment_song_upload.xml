@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SongUpload"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:weightSum="20"
+    android:padding="10sp"
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="upload picture"
+        android:layout_gravity="center"
+        android:id="@+id/uploadPicture"></Button>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:src="@drawable/default_image"
+        android:layout_gravity="center">
+        </ImageView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="upload song"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:id="@+id/uploadSong"></Button>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:text="NO SONG HAS BEEN UPLOADED YET"
+        android:textStyle="bold"
+        android:textColor="?android:textColorPrimary"
+        ></TextView>
+
+</LinearLayout>

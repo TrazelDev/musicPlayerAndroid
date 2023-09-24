@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Red Color -->
+    <color name="primary_red">#FF0000</color>
+
+    <!-- Light Gray Background Color -->
+    <color name="dark_gray">#5A5A5A</color>
+
+    <!-- Accent Color -->
+    <color name="accent_red">#CC0000</color>
+
+    <!-- Text Color on Light Background (Black) -->
+    <color name="text_color_light">#000000</color>
+
+    <!-- Text Color on Dark Background (White) -->
+    <color name="text_color_dark">#FFFFFF</color>
+</resources>

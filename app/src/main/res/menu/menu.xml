@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_play"
+        android:title="Play"
+        android:icon="@drawable/home_icon"
+        android:paddingStart="2dp"
+        android:paddingEnd="3dp" />
+
+    <item
+        android:id="@+id/navigation_addSongs"
+        android:title="song adding"
+        android:icon="@drawable/white_add_icon"
+        android:paddingStart="2dp"
+        android:paddingEnd="3dp"/>
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:title="Profile"
+        android:icon="@drawable/profile_icon"
+        android:paddingStart="2dp"
+        android:paddingEnd="3dp" />
+
+</menu>
+
