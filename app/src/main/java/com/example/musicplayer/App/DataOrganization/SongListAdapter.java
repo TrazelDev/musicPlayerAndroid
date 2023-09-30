@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App.DataOrganization;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,12 +8,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.example.musicplayer.App.DataOrganization.Song;
+import com.example.musicplayer.R;
 
 import java.util.ArrayList;
 

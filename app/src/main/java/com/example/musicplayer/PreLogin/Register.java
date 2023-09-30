@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.example.musicplayer.PreLogin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.musicplayer.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -18,11 +19,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Login extends AppCompatActivity {
+public class Register extends AppCompatActivity {
+
     TextInputEditText editTextEmail, editTextPassword;
-    Button loginBtn;
+    Button registerBtn;
     FirebaseAuth mAuth;
-    TextView switchToRegister;
+    TextView switchToLogin;
 
     @Override
     public void onStart() {
@@ -31,7 +33,7 @@ public class Login extends AppCompatActivity {
 
         if(currentUser != null)
         {
-            Intent registerIntent = new Intent(getApplicationContext(), songPlayerAppActivity.class);
+            Intent registerIntent = new Intent(getApplicationContext(), Register.class);
             startActivity(registerIntent);
             finish();
         }
@@ -40,23 +42,23 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
-        loginBtn = findViewById(R.id.btnLogin);
-        switchToRegister = findViewById(R.id.RegisterScreenSwitch);
-        switchToRegister.setOnClickListener(new View.OnClickListener() {
+        registerBtn = findViewById(R.id.btnRegister);
+        switchToLogin = findViewById(R.id.loginScreenSwitch);
+        switchToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(getApplicationContext(), Register.class);
-                startActivity(registerIntent);
+                Intent loginIntent = new Intent(getApplicationContext(), Login.class);
+                startActivity(loginIntent);
                 finish();
             }
         });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = String.valueOf(editTextEmail.getText());
@@ -64,30 +66,30 @@ public class Login extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(email))
                 {
-                    Toast.makeText(Login.this, "pls enter email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "pls enter email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(TextUtils.isEmpty(password))
                 {
-                    Toast.makeText(Login.this, "pls enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "pls enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                mAuth.signInWithEmailAndPassword(email, password)
+                mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful())
                                 {
-                                    Toast.makeText(Login.this, "Login successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), songPlayerAppActivity.class);
-                                    startActivity(intent);
+                                    Toast.makeText(Register.this, "Account created successfully", Toast.LENGTH_SHORT).show();
+                                    Intent registerIntent = new Intent(getApplicationContext(), Login.class);
+                                    startActivity(registerIntent);
                                     finish();
                                 }
                                 else
                                 {
-                                    Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Register.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

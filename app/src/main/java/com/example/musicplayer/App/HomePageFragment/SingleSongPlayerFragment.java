@@ -1,42 +1,24 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App.HomePageFragment;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.RippleDrawable;
-import android.graphics.drawable.shapes.RoundRectShape;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
+import com.example.musicplayer.R;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.IOException;
-
-public class HomePage extends Fragment {
+public class SingleSongPlayerFragment extends Fragment {
 
     private static final String TAG = "PlaySongsFragment";
     private StorageReference songRef;
@@ -49,7 +31,7 @@ public class HomePage extends Fragment {
     private SeekBar songSeekBar;
     private ImageView circularButton;
     private int isPlaying = 0;
-    public HomePage()
+    public SingleSongPlayerFragment()
     {
         // Required empty public constructor
     }

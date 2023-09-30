@@ -1,20 +1,24 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.musicplayer.App.HomePageFragment.SingleSongPlayerFragment;
+import com.example.musicplayer.App.SongUploads.UploadSongsMainFragment;
+import com.example.musicplayer.App.UserInfo.UserProfileDisplay;
+import com.example.musicplayer.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class songPlayerAppActivity extends AppCompatActivity {
 
-    private HomePage songPlayerFragment = null;
+    private SingleSongPlayerFragment songPlayerFragment = null;
     private UserProfileDisplay userProfileFragment = null;
-    private AddSongs addSongsFragment = null;
+    private UploadSongsMainFragment addSongsFragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +27,9 @@ public class songPlayerAppActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize the fragments
-        if (songPlayerFragment == null) {songPlayerFragment = new HomePage(); }
+        if (songPlayerFragment == null) {songPlayerFragment = new SingleSongPlayerFragment(); }
         if (userProfileFragment == null) {userProfileFragment = new UserProfileDisplay(); }
-        if (addSongsFragment == null) {addSongsFragment = new AddSongs(); }
+        if (addSongsFragment == null) {addSongsFragment = new UploadSongsMainFragment(); }
 
         // Load the initial fragment (PlaySongsFragment)
         loadFragment(songPlayerFragment);

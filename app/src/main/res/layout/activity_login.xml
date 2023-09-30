@@ -9,7 +9,7 @@
     android:gravity="top"
     android:layout_weight="120"
     android:padding="15dp"
-    tools:context=".Login">
+    tools:context=".PreLogin.Login">
 
     <!-- TextView at the top -->
     <TextView

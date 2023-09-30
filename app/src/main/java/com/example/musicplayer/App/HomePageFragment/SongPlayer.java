@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App.HomePageFragment;
 
 import android.media.AudioAttributes;
 import android.media.AudioManager;

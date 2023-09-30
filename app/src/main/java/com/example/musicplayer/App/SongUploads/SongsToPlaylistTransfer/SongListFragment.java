@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App.SongUploads.SongsToPlaylistTransfer;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +13,11 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.musicplayer.App.DataOrganization.Database;
+import com.example.musicplayer.App.DataOrganization.Song;
+import com.example.musicplayer.App.DataOrganization.SongListAdapter;
+import com.example.musicplayer.App.songPlayerAppActivity;
+import com.example.musicplayer.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 

@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App.SongUploads;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -15,7 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-public class AddSongs extends Fragment {
+import com.example.musicplayer.App.SongUploads.SongsToPlaylistTransfer.SongListFragment;
+import com.example.musicplayer.App.SongUploads.uploadSongs.SongUploadFragment;
+import com.example.musicplayer.R;
+
+public class UploadSongsMainFragment extends Fragment {
 
     private SongUploadFragment uploadSongsFragment;
     private SongListFragment songListFragment;
@@ -24,7 +28,7 @@ public class AddSongs extends Fragment {
 
     private static final int PICK_FILE_REQUEST = 1;
 
-    public AddSongs() {
+    public UploadSongsMainFragment() {
         // Required empty public constructor
     }
 

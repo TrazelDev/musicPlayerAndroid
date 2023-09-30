@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App.SongUploads.uploadSongs;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -23,12 +23,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.musicplayer.App.DataOrganization.Database;
+import com.example.musicplayer.R;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 public class SongUploadFragment extends Fragment
 {
@@ -222,47 +219,5 @@ public class SongUploadFragment extends Fragment
 
         Database temp = new Database();
         temp.uploadNewSong(songsName, "0:00", !noImageBox.isChecked(), songUri, imageUri, requireContext());
-
-        /*
-        // getting the users email
-        String usesEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-
-
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReference();
-
-        StorageReference fileRef = storageRef.child(usesEmail + "/songs/" + songsName);
-
-        fileRef.putFile(songUri)
-                .addOnSuccessListener(taskSnapshot ->
-                {
-                    Toast.makeText(requireContext(), "uploaded song successfully", Toast.LENGTH_LONG).show();
-
-                    if (!noImageBox.isChecked())
-                    {
-                        songUri = null;
-                        storageRef.child(usesEmail + "/pictures/" + songsName).putFile(imageUri)
-                                .addOnSuccessListener(imageUploadTask ->
-                                {
-                                    imageUri = null;
-                                    Toast.makeText(requireContext(), "Uploaded image successfully", Toast.LENGTH_LONG).show();
-
-
-
-                                })
-                                .addOnFailureListener(imageUploadException -> {
-                                    Toast.makeText(requireContext(), "Failed to upload image", Toast.LENGTH_SHORT).show();
-                                });
-                    }
-
-                })
-                .addOnFailureListener(exception -> {
-                    Toast.makeText(requireContext(), "failed to upload song", Toast.LENGTH_SHORT).show();
-                });
-
-
-
-         */
-
     }
 }

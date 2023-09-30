@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".AddSongs"
+    tools:context=".App.SongUploads.UploadSongsMainFragment"
     android:orientation="vertical"
     android:weightSum="6"
     android:padding="7sp">

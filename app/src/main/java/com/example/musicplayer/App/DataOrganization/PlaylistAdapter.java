@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App.DataOrganization;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.musicplayer.Playlist;
+import com.example.musicplayer.App.DataOrganization.Playlist;
+import com.example.musicplayer.R;
 
 import java.util.ArrayList;
 

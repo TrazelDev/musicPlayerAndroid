@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.example.musicplayer.App.UserInfo;
 
 
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.musicplayer.PreLogin.Login;
+import com.example.musicplayer.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
