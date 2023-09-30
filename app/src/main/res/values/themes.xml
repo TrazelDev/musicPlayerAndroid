@@ -8,7 +8,7 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
 
-        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:windowBackground">@drawable/top_list_component_background</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -20,16 +20,13 @@
 
     </style>
 
-    <color name="colorPrimary">#c30e0e</color>
-    <color name="colorPrimaryDark">#a21112</color>
-    <color name="colorAccent">#821415</color>
-    <color name="textColorPrimary">#FFFFFF</color>
-    <color name="textColorSecondary">#FFFFFF</color>
-    <color name="windowBackground">#333333</color>
-    <color name="statusBarColor">#000000</color>
-
     <style name="buttonStyle" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/rounded_button</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.musicPlayerTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
 </resources>

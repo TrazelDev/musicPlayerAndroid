@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:layout_weight="16"
         android:layout_gravity="center"
-        android:src="@drawable/album_default" />
+        android:src="@drawable/default_album_cover" />
 
 
     <LinearLayout

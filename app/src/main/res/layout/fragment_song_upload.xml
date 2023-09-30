@@ -3,46 +3,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SongUpload"
+    tools:context=".SongUploadFragment"
     android:orientation="vertical"
     android:gravity="center"
-    android:weightSum="20"
+    android:weightSum="16"
     android:padding="10sp"
     >
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:text="upload picture"
-        android:layout_gravity="center"
-        android:id="@+id/uploadPicture"></Button>
-
-    <ImageView
+    
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8"
-        android:src="@drawable/default_image"
-        android:layout_gravity="center">
+        android:weightSum="5"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="upload picture"
+            android:layout_gravity="center"
+            android:id="@+id/uploadPicture"></Button>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:src="@drawable/default_image"
+            android:layout_gravity="center"
+            android:id="@+id/songImage">
         </ImageView>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="upload song"
-        android:layout_weight="2"
-        android:layout_gravity="center"
-        android:id="@+id/uploadSong"></Button>
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:gravity="center"
-        android:autoSizeTextType="uniform"
-        android:text="NO SONG HAS BEEN UPLOADED YET"
-        android:textStyle="bold"
-        android:textColor="?android:textColorPrimary"
-        ></TextView>
+        android:weightSum="5"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="upload song"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:id="@+id/uploadSong"></Button>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:autoSizeTextType="uniform"
+            android:text="NO SONG HAS BEEN UPLOADED YET"
+            android:textStyle="bold"
+            android:textColor="?android:textColorPrimary"
+            android:id="@+id/CurrentSongUploaded"
+            ></TextView>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:hint="@string/song_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/songName"
+            >
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="SEND SONG"
+            android:id="@+id/sendSong"
+            android:layout_centerHorizontal="true"
+            ></Button>
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/sendSong"
+            android:layout_marginLeft="30dp"
+            android:textColor="?android:textColorPrimary"
+            android:textStyle="bold"
+            android:text="NO PIC"
+            android:id="@+id/songNoWithNoPic"
+            ></CheckBox>
+    </RelativeLayout>
+
+
 
 </LinearLayout>

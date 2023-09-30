@@ -1,0 +1,29 @@
+<Button
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/playlistButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="start|center_vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/playlistImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/default_album_cover"
+        />
+
+    <TextView
+        android:id="@+id/playlistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Playlist Name"
+        android:textSize="18sp"
+        android:textColor="?android:textColorPrimary" />
+
+</Button>

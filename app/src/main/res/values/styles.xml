@@ -3,7 +3,8 @@
     <style name="BottomNavigationViewStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <!-- You can adjust other attributes as needed -->
-        <item name="android:minHeight">60dp</item> <!-- Adjust the minimum height as needed -->
-    </style>
+
+        <item name="android:minHeight">60dp</item>
+    </style>>
+
 </resources>

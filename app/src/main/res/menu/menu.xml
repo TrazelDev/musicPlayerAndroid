@@ -5,7 +5,7 @@
     <item
         android:id="@+id/navigation_play"
         android:title="Play"
-        android:icon="@drawable/home_icon"
+        android:icon="@drawable/white_home_icon"
         android:paddingStart="2dp"
         android:paddingEnd="3dp" />
 

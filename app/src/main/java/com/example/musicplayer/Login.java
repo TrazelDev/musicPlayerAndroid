@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
 
         if(currentUser != null)
         {
-            Intent registerIntent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent registerIntent = new Intent(getApplicationContext(), songPlayerAppActivity.class);
             startActivity(registerIntent);
             finish();
         }
@@ -81,7 +81,7 @@ public class Login extends AppCompatActivity {
                                 if (task.isSuccessful())
                                 {
                                     Toast.makeText(Login.this, "Login successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(), songPlayerAppActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }

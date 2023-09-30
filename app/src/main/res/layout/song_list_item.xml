@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@drawable/song_playlist_background"
+    android:weightSum="4">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/itemSongImage"
+        android:src="@drawable/default_album_cover"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:weightSum="5"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/itemSongName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Song name"
+            android:layout_weight="3"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="20dp"
+            android:textColor="?android:textColorPrimary"
+            android:layout_marginStart="12dp"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="ADD TO PLAY LIST:"
+        android:textColor="?android:textColorPrimary"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeMaxTextSize="30sp"
+    />
+
+    <ImageButton
+        android:padding="15dp"
+        android:id="@+id/itemPlayIcon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/white_add_icon"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:onClick="onImageButtonClick"
+        />
+</LinearLayout>
