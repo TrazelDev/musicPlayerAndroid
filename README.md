@@ -3,6 +3,9 @@
 ## Overview:
 This is a music player that supports storing songs, pictures for the songs, and playlists and listening to them in the app.
 
+> [!Note]
+> The project was developed on the Giraffe version of Android Studio. Compatibility issues may arise with other versions due to Android Studio's known compatibility issues.
+
 ### Current features support:
 - Listening to the songs stored in Firebase Storage, skipping within the song, and pausing.
 - Displaying a list of songs stored in Firebase Realtime Database.
