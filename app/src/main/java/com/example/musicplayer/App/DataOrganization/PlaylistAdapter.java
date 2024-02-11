@@ -34,24 +34,24 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.playlist_item, parent, false);
         }
 
-        // Lookup views within item layout
-        Button playlistButton = convertView.findViewById(R.id.playlistButton);
-        ImageView playlistImage = convertView.findViewById(R.id.playlistImage);
-        TextView playlistName = convertView.findViewById(R.id.playlistName);
+        Playlist currentPlaylist = playlists.get(position);
 
+        TextView text = convertView.findViewById(R.id.playListName);
+
+        text.setText(currentPlaylist.getName());
         // Populate the data into the template view using the data object
-        playlistName.setText(playlist.getName());
+        //playlistName.setText(playlist.getName());
         // Set the image (you can use a library like Glide for efficient image loading)
 
         // Set an OnClickListener for the playlistButton
-        playlistButton.setOnClickListener(new View.OnClickListener() {
+        /*playlistButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Handle button click here, e.g., get the playlist name
                 String playlistName = playlist.getName();
                 // Do something with the playlist name
             }
-        });
+        });*/
 
         // Return the completed view to render on screen
         return convertView;

@@ -1,29 +1,50 @@
-<Button
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/playlistButton"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:padding="16dp"
-    android:gravity="start|center_vertical"
-    android:background="?android:attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true">
+    android:background="@drawable/song_playlist_background"
+    android:weightSum="4">
 
     <ImageView
-        android:id="@+id/playlistImage"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/itemSongImage"
         android:src="@drawable/default_album_cover"
         />
 
-    <TextView
-        android:id="@+id/playlistName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Playlist Name"
-        android:textSize="18sp"
-        android:textColor="?android:textColorPrimary" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:weightSum="5"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/playListName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="playList name"
+            android:layout_weight="3"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textColor="?android:textColorPrimary"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="30dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1sp"
+            app:autoSizeMaxTextSize="30sp"
+            />
+    </LinearLayout>
 
-</Button>
+    <Button
+        android:padding="5dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="ADD SONG TO THIS PLAY LIST"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1sp"
+        app:autoSizeMaxTextSize="30sp"
+        />
+</LinearLayout>

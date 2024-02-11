@@ -24,6 +24,7 @@ public class Database
         m_realTimeDBRef = m_realTimeDB.getReference();
         m_storageDB = FirebaseStorage.getInstance();
         m_storageRef = m_storageDB.getReference();
+        m_accountID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     public void uploadNewSong(String songName, String songLen, boolean hasPic, Uri songUri, Uri picUri,
@@ -47,10 +48,8 @@ public class Database
         thisSongRef.child("name").setValue(songName);
         thisSongRef.child("hasPicture").setValue(hasPic);
 
-        String accountUId = FirebaseAuth.getInstance().getCurrentUser().getUid(); // getting the unique id that the user is getting when he creates an account
-        DatabaseReference userAccountRef = m_realTimeDBRef.child("Users").child(accountUId); // getting a ref to the users account
+        DatabaseReference userAccountRef = m_realTimeDBRef.child("Users").child(m_accountID); // getting a ref to the users account
         userAccountRef.child("SongIds").child(songUId).setValue(true); // the true means the user owns the song
-
 
         return songUId;
     }
@@ -61,8 +60,6 @@ public class Database
     private void addSongStorage(Uri songUri, Uri picUri, android.content.Context context, boolean hasPic,
                                 String songUId)
     {
-        String useUniqueId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
         m_storageRef.child("Songs/" + songUId).putFile(songUri)
                 .addOnSuccessListener(taskSnapshot ->
                 {
@@ -129,9 +126,33 @@ public class Database
         return pictureRef.getDownloadUrl();
     }
 
+    public void getUsersPlayList()
+    {
+
+    }
+
+    public void createPlayList(ArrayList<String> songIDs) {
+        DatabaseReference playlistsFolderRef = m_realTimeDBRef.child("Playlists"); // getting a ref to the playlists
+
+        String playlistUID = playlistsFolderRef.push().getKey(); // creating a unique playList
+        DatabaseReference thisPlayListRef = playlistsFolderRef.child(playlistUID);
+
+        thisPlayListRef.child("size").setValue(songIDs.size()); // the number of songs
+
+        DatabaseReference thisPlayListSongsRef = thisPlayListRef.child("ids");
+        for (int i = 0; i < songIDs.size(); i++)
+        {
+            thisPlayListSongsRef.child(songIDs.get(i)).setValue(""); // a value must be set so we set an empty value
+        }
+
+        // adding the playlist to the users playlist list ( true stands for the fact that the user owns the playlist )
+        m_realTimeDBRef.child("Users").child(m_accountID).child("Playlists").child(playlistUID).setValue(true);
+    }
+
 
     private FirebaseDatabase m_realTimeDB; // the firebase real time database
     private DatabaseReference m_realTimeDBRef; // reference to the root of the real time data base
     private FirebaseStorage m_storageDB;
     private StorageReference m_storageRef;
+    private String m_accountID;
 }

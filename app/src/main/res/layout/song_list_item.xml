@@ -28,9 +28,12 @@
             android:layout_weight="3"
             android:textStyle="bold"
             android:gravity="center_vertical"
-            android:textSize="20dp"
             android:textColor="?android:textColorPrimary"
             android:layout_marginStart="12dp"
+            android:layout_marginEnd="30dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1sp"
+            app:autoSizeMaxTextSize="30sp"
             />
 
     </LinearLayout>
@@ -43,7 +46,6 @@
         android:text="ADD TO PLAY LIST:"
         android:textColor="?android:textColorPrimary"
         android:textStyle="bold"
-        android:textSize="18sp"
         app:autoSizeTextType="uniform"
         app:autoSizeMinTextSize="10sp"
         app:autoSizeMaxTextSize="30sp"

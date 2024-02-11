@@ -1,5 +1,8 @@
 package com.example.musicplayer.App.SongUploads.SongsToPlaylistTransfer;
 
+import static android.app.Activity.RESULT_OK;
+
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -16,6 +19,8 @@ import android.widget.Toast;
 import com.example.musicplayer.App.DataOrganization.Database;
 import com.example.musicplayer.App.DataOrganization.Song;
 import com.example.musicplayer.App.DataOrganization.SongListAdapter;
+import com.example.musicplayer.App.HomePageFragment.SingleSongPlayerFragment;
+import com.example.musicplayer.App.HomePageFragment.SongPlayer;
 import com.example.musicplayer.App.songPlayerAppActivity;
 import com.example.musicplayer.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -247,12 +252,18 @@ public class SongListFragment extends Fragment {
     private void function()
     {
         Toast.makeText(requireContext(), "switch", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(requireContext(), ChoosePlaylistActivity.class);
+        startActivityForResult(intent, CHOOSE_PLAYLIST_REQUEST);
+
+
         //Toast.makeText(requireContext(), "yes", Toast.LENGTH_SHORT).show();
         // Create a Bundle to pass data to the new MainFragment
         //Bundle bundle = new Bundle();
         //bundle.putString("key", "value"); // Replace with your data
         // newMainFragment.setArguments(bundle);
 
+        /*
         if (getActivity() instanceof songPlayerAppActivity) {
             songPlayerAppActivity activity = (songPlayerAppActivity) getActivity();
             Fragment currentFragment = activity.getSupportFragmentManager().findFragmentById(R.id.fragment_container);
@@ -260,7 +271,7 @@ public class SongListFragment extends Fragment {
             if (currentFragment != null) {
                 FragmentManager fragmentManager = currentFragment.getChildFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.songManipulation, new AddSongToPlayListFragment())
+                        .replace(R.id.songManipulation, new SingleSongPlayerFragment())
                         .addToBackStack(null)
                         .commit();
                 Toast.makeText(requireContext(), "switch", Toast.LENGTH_SHORT).show();
@@ -274,7 +285,7 @@ public class SongListFragment extends Fragment {
         {
             Toast.makeText(requireContext(), "failed the main activity", Toast.LENGTH_SHORT).show();
         }
-
+        */
 
         //FragmentManager fragmentManager = mainFragment.getChildFragmentManager();
 
@@ -289,6 +300,23 @@ public class SongListFragment extends Fragment {
         // transaction.addToBackStack(null);
         // transaction.commit();
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CHOOSE_PLAYLIST_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                // Retrieve the selected playlist from the result intent
+                String selectedPlaylist = data.getStringExtra("selectedPlaylist");
+                Toast.makeText(requireContext(), selectedPlaylist, Toast.LENGTH_SHORT).show();
+                // Handle the selected playlist as needed
+            }
+        }
+    }
+
     SongListAdapter adapter;
+    static final int CHOOSE_PLAYLIST_REQUEST = 1;
+
 
 }
